@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/prop.gd" id="1_84561"]
+[ext_resource type="Texture2D" path="res://assets/props/signpost.png" id="2_99554"]
+
+[node name="Placa" type="Node2D"]
+script = ExtResource("1_84561")
+blocks_navigation = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_99554")
+centered = false
+offset = Vector2(-13, -41)
+
+[node name="Corpo" type="StaticBody2D" parent="."]
+collision_mask = 0
+
+[node name="Colisao" type="CollisionPolygon2D" parent="Corpo"]
+polygon = PackedVector2Array(0, -2.88, 5.76, 0, 0, 2.88, -5.76, 0)
+

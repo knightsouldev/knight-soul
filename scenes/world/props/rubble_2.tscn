@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/prop.gd" id="1_84561"]
+[ext_resource type="Texture2D" path="res://assets/props/rubble_2.png" id="2_04031"]
+
+[node name="EntulhoC" type="Node2D"]
+script = ExtResource("1_84561")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_04031")
+centered = false
+offset = Vector2(-21, -15)
+

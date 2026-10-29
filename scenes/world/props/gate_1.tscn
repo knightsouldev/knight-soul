@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/prop.gd" id="1_84561"]
+[ext_resource type="Texture2D" path="res://assets/props/gate_1.png" id="2_79142"]
+
+[node name="PortaoParte2" type="Node2D"]
+script = ExtResource("1_84561")
+fades_when_hiding_player = true
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_79142")
+centered = false
+offset = Vector2(-16, -146)
+

@@ -1,0 +1,796 @@
+[gd_scene load_steps=24 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Gloock-Regular.ttf" id="1_07579"]
+[ext_resource type="Script" path="res://scripts/ui/hud.gd" id="2_59911"]
+[ext_resource type="Theme" path="res://resources/themes/tema_medieval.tres" id="3_15842"]
+[ext_resource type="Texture2D" path="res://assets/ui/vignette.png" id="4_58659"]
+[ext_resource type="Texture2D" path="res://assets/ui/bar_bg.png" id="5_31871"]
+[ext_resource type="Texture2D" path="res://assets/ui/bar_trail.png" id="6_02925"]
+[ext_resource type="Texture2D" path="res://assets/ui/bar_red.png" id="7_53172"]
+[ext_resource type="Texture2D" path="res://assets/ui/bar_frame.png" id="8_06109"]
+[ext_resource type="Texture2D" path="res://assets/ui/bar_green.png" id="9_64369"]
+[ext_resource type="Texture2D" path="res://assets/ui/orb_gem.png" id="10_51313"]
+[ext_resource type="Texture2D" path="res://assets/ui/orb_frame.png" id="11_70276"]
+[ext_resource type="Texture2D" path="res://assets/ui/drop_full.png" id="12_13836"]
+[ext_resource type="Texture2D" path="res://assets/ui/boss_frame.png" id="13_68840"]
+[ext_resource type="Texture2D" path="res://assets/ui/slot.png" id="14_72276"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_sword.png" id="15_91254"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_oil.png" id="16_45035"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_flask.png" id="17_81340"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_cloak.png" id="18_99966"]
+[ext_resource type="Texture2D" path="res://assets/ui/slot_sel.png" id="19_45310"]
+[ext_resource type="Texture2D" path="res://assets/ui/soul_frame.png" id="20_52895"]
+[ext_resource type="Texture2D" path="res://assets/ui/soul_icon.png" id="21_84067"]
+[ext_resource type="Texture2D" path="res://assets/ui/compass.png" id="22_54458"]
+[ext_resource type="Texture2D" path="res://assets/ui/compass_marker.png" id="23_98955"]
+
+[node name="Hud" type="CanvasLayer"]
+layer = 10
+script = ExtResource("2_59911")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_15842")
+
+[node name="Vinheta" type="TextureRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("4_58659")
+expand_mode = 1
+stretch_mode = 0
+modulate = Color(1, 1, 1, 0.55)
+unique_name_in_owner = true
+
+[node name="CantoSuperiorEsquerdo" type="Control" parent="Raiz"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 8
+offset_top = 6
+offset_right = 268
+offset_bottom = 78
+
+[node name="BarraVida" type="Control" parent="Raiz/CantoSuperiorEsquerdo"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 62
+offset_top = 14
+offset_right = 212
+offset_bottom = 22
+
+[node name="Fundo" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo/BarraVida"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 150
+offset_bottom = 8
+mouse_filter = 2
+texture = ExtResource("5_31871")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="VidaRastro" type="TextureProgressBar" parent="Raiz/CantoSuperiorEsquerdo/BarraVida"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 150
+offset_bottom = 8
+mouse_filter = 2
+max_value = 1.0
+step = 0.0001
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("6_02925")
+unique_name_in_owner = true
+
+[node name="VidaPreenchimento" type="TextureProgressBar" parent="Raiz/CantoSuperiorEsquerdo/BarraVida"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 150
+offset_bottom = 8
+mouse_filter = 2
+max_value = 1.0
+step = 0.0001
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("7_53172")
+unique_name_in_owner = true
+
+[node name="MolduraBarraVida" type="NinePatchRect" parent="Raiz/CantoSuperiorEsquerdo"]
+layout_mode = 0
+offset_left = 58
+offset_top = 10
+offset_right = 216
+offset_bottom = 26
+mouse_filter = 2
+texture = ExtResource("8_06109")
+patch_margin_left = 10
+patch_margin_top = 4
+patch_margin_right = 10
+patch_margin_bottom = 4
+
+[node name="BarraStamina" type="Control" parent="Raiz/CantoSuperiorEsquerdo"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 62
+offset_top = 32
+offset_right = 180
+offset_bottom = 38
+
+[node name="Fundo" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo/BarraStamina"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 118
+offset_bottom = 6
+mouse_filter = 2
+texture = ExtResource("5_31871")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="StaminaRastro" type="TextureProgressBar" parent="Raiz/CantoSuperiorEsquerdo/BarraStamina"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 118
+offset_bottom = 6
+mouse_filter = 2
+max_value = 1.0
+step = 0.0001
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("6_02925")
+unique_name_in_owner = true
+
+[node name="StaminaPreenchimento" type="TextureProgressBar" parent="Raiz/CantoSuperiorEsquerdo/BarraStamina"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 118
+offset_bottom = 6
+mouse_filter = 2
+max_value = 1.0
+step = 0.0001
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("9_64369")
+unique_name_in_owner = true
+
+[node name="MolduraBarraStamina" type="NinePatchRect" parent="Raiz/CantoSuperiorEsquerdo"]
+layout_mode = 0
+offset_left = 58
+offset_top = 28
+offset_right = 184
+offset_bottom = 42
+mouse_filter = 2
+texture = ExtResource("8_06109")
+patch_margin_left = 10
+patch_margin_top = 4
+patch_margin_right = 10
+patch_margin_bottom = 4
+
+[node name="OrbeGema" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo"]
+layout_mode = 0
+offset_left = 12
+offset_top = 12
+offset_right = 48
+offset_bottom = 48
+mouse_filter = 2
+texture = ExtResource("10_51313")
+unique_name_in_owner = true
+
+[node name="OrbeMoldura" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 60
+offset_bottom = 60
+mouse_filter = 2
+texture = ExtResource("11_70276")
+
+[node name="Frascos" type="Control" parent="Raiz/CantoSuperiorEsquerdo"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 130
+offset_bottom = 70
+
+[node name="Gota1" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo/Frascos"]
+layout_mode = 0
+offset_left = 64
+offset_top = 48
+offset_right = 75
+offset_bottom = 62
+mouse_filter = 2
+texture = ExtResource("12_13836")
+unique_name_in_owner = true
+
+[node name="Gota2" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo/Frascos"]
+layout_mode = 0
+offset_left = 78
+offset_top = 48
+offset_right = 89
+offset_bottom = 62
+mouse_filter = 2
+texture = ExtResource("12_13836")
+unique_name_in_owner = true
+
+[node name="Gota3" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo/Frascos"]
+layout_mode = 0
+offset_left = 92
+offset_top = 48
+offset_right = 103
+offset_bottom = 62
+mouse_filter = 2
+texture = ExtResource("12_13836")
+unique_name_in_owner = true
+
+[node name="Gota4" type="TextureRect" parent="Raiz/CantoSuperiorEsquerdo/Frascos"]
+layout_mode = 0
+offset_left = 106
+offset_top = 48
+offset_right = 117
+offset_bottom = 62
+mouse_filter = 2
+texture = ExtResource("12_13836")
+unique_name_in_owner = true
+
+[node name="PainelChefe" type="Control" parent="Raiz"]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0
+anchor_right = 0.5
+anchor_bottom = 0
+offset_left = -190
+offset_top = 8
+offset_right = 190
+offset_bottom = 56
+unique_name_in_owner = true
+
+[node name="Nome" type="Label" parent="Raiz/PainelChefe"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 380
+offset_bottom = 18
+mouse_filter = 2
+text = "SENTINELA DA RUÍNA"
+horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("1_07579")
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 15
+
+[node name="BarraChefe" type="Control" parent="Raiz/PainelChefe"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 14
+offset_top = 22
+offset_right = 366
+offset_bottom = 30
+
+[node name="Fundo" type="TextureRect" parent="Raiz/PainelChefe/BarraChefe"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 352
+offset_bottom = 8
+mouse_filter = 2
+texture = ExtResource("5_31871")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="ChefeRastro" type="TextureProgressBar" parent="Raiz/PainelChefe/BarraChefe"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 352
+offset_bottom = 8
+mouse_filter = 2
+max_value = 1.0
+step = 0.0001
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("6_02925")
+unique_name_in_owner = true
+
+[node name="ChefePreenchimento" type="TextureProgressBar" parent="Raiz/PainelChefe/BarraChefe"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 352
+offset_bottom = 8
+mouse_filter = 2
+max_value = 1.0
+step = 0.0001
+value = 1.0
+nine_patch_stretch = true
+stretch_margin_left = 2
+stretch_margin_top = 2
+stretch_margin_right = 2
+stretch_margin_bottom = 2
+texture_progress = ExtResource("7_53172")
+unique_name_in_owner = true
+
+[node name="MolduraBarraChefe" type="NinePatchRect" parent="Raiz/PainelChefe"]
+layout_mode = 0
+offset_left = 8
+offset_top = 17
+offset_right = 372
+offset_bottom = 35
+mouse_filter = 2
+texture = ExtResource("13_68840")
+patch_margin_left = 16
+patch_margin_top = 5
+patch_margin_right = 16
+patch_margin_bottom = 5
+
+[node name="Subtitulo" type="Label" parent="Raiz/PainelChefe"]
+layout_mode = 0
+offset_left = 0
+offset_top = 34
+offset_right = 380
+offset_bottom = 48
+mouse_filter = 2
+text = "Guardião das Almas Perdidas"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.62, 0.5, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+
+[node name="Atalhos" type="Control" parent="Raiz"]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0
+anchor_top = 1
+anchor_right = 0
+anchor_bottom = 1
+offset_left = 10
+offset_top = -52
+offset_right = 178
+offset_bottom = -8
+
+[node name="Slot1_Espada" type="Control" parent="Raiz/Atalhos"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 38
+offset_bottom = 38
+
+[node name="Fundo" type="TextureRect" parent="Raiz/Atalhos/Slot1_Espada"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 38
+offset_bottom = 38
+mouse_filter = 2
+texture = ExtResource("14_72276")
+
+[node name="Icone" type="TextureRect" parent="Raiz/Atalhos/Slot1_Espada"]
+layout_mode = 0
+offset_left = 5
+offset_top = 5
+offset_right = 33
+offset_bottom = 33
+mouse_filter = 2
+texture = ExtResource("15_91254")
+
+[node name="Numero" type="Label" parent="Raiz/Atalhos/Slot1_Espada"]
+layout_mode = 0
+offset_left = 4
+offset_top = 24
+offset_right = 18
+offset_bottom = 38
+mouse_filter = 2
+text = "1"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+
+[node name="Slot2_Oleo" type="Control" parent="Raiz/Atalhos"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 42
+offset_top = 0
+offset_right = 80
+offset_bottom = 38
+
+[node name="Fundo" type="TextureRect" parent="Raiz/Atalhos/Slot2_Oleo"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 38
+offset_bottom = 38
+mouse_filter = 2
+texture = ExtResource("14_72276")
+
+[node name="Icone" type="TextureRect" parent="Raiz/Atalhos/Slot2_Oleo"]
+layout_mode = 0
+offset_left = 5
+offset_top = 5
+offset_right = 33
+offset_bottom = 33
+mouse_filter = 2
+texture = ExtResource("16_45035")
+
+[node name="Numero" type="Label" parent="Raiz/Atalhos/Slot2_Oleo"]
+layout_mode = 0
+offset_left = 4
+offset_top = 24
+offset_right = 18
+offset_bottom = 38
+mouse_filter = 2
+text = "2"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+
+[node name="Slot3_Frasco" type="Control" parent="Raiz/Atalhos"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 84
+offset_top = 0
+offset_right = 122
+offset_bottom = 38
+
+[node name="Fundo" type="TextureRect" parent="Raiz/Atalhos/Slot3_Frasco"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 38
+offset_bottom = 38
+mouse_filter = 2
+texture = ExtResource("14_72276")
+
+[node name="Icone" type="TextureRect" parent="Raiz/Atalhos/Slot3_Frasco"]
+layout_mode = 0
+offset_left = 5
+offset_top = 5
+offset_right = 33
+offset_bottom = 33
+mouse_filter = 2
+texture = ExtResource("17_81340")
+
+[node name="Numero" type="Label" parent="Raiz/Atalhos/Slot3_Frasco"]
+layout_mode = 0
+offset_left = 4
+offset_top = 24
+offset_right = 18
+offset_bottom = 38
+mouse_filter = 2
+text = "3"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+
+[node name="Slot4_Manto" type="Control" parent="Raiz/Atalhos"]
+mouse_filter = 2
+layout_mode = 0
+offset_left = 126
+offset_top = 0
+offset_right = 164
+offset_bottom = 38
+
+[node name="Fundo" type="TextureRect" parent="Raiz/Atalhos/Slot4_Manto"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 38
+offset_bottom = 38
+mouse_filter = 2
+texture = ExtResource("14_72276")
+
+[node name="Icone" type="TextureRect" parent="Raiz/Atalhos/Slot4_Manto"]
+layout_mode = 0
+offset_left = 5
+offset_top = 5
+offset_right = 33
+offset_bottom = 33
+mouse_filter = 2
+texture = ExtResource("18_99966")
+
+[node name="Numero" type="Label" parent="Raiz/Atalhos/Slot4_Manto"]
+layout_mode = 0
+offset_left = 4
+offset_top = 24
+offset_right = 18
+offset_bottom = 38
+mouse_filter = 2
+text = "4"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 10
+
+[node name="SelecaoSlot" type="TextureRect" parent="Raiz/Atalhos"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 38
+offset_bottom = 38
+mouse_filter = 2
+texture = ExtResource("19_45310")
+unique_name_in_owner = true
+
+[node name="TextoOleo" type="Label" parent="Raiz/Atalhos/Slot2_Oleo"]
+layout_mode = 0
+offset_left = 27
+offset_top = 22
+offset_right = 41
+offset_bottom = 36
+mouse_filter = 2
+text = "2"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(1, 0.85, 0.55, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+unique_name_in_owner = true
+
+[node name="TextoFrascos" type="Label" parent="Raiz/Atalhos/Slot3_Frasco"]
+layout_mode = 0
+offset_left = 27
+offset_top = 22
+offset_right = 41
+offset_bottom = 36
+mouse_filter = 2
+text = "4"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.7, 0.88, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+unique_name_in_owner = true
+
+[node name="Almas" type="Control" parent="Raiz"]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1
+anchor_top = 1
+anchor_right = 1
+anchor_bottom = 1
+offset_left = -112
+offset_top = -38
+offset_right = -10
+offset_bottom = -10
+
+[node name="Moldura" type="NinePatchRect" parent="Raiz/Almas"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 102
+offset_bottom = 28
+mouse_filter = 2
+texture = ExtResource("20_52895")
+patch_margin_left = 10
+patch_margin_top = 8
+patch_margin_right = 10
+patch_margin_bottom = 8
+
+[node name="Icone" type="TextureRect" parent="Raiz/Almas"]
+layout_mode = 0
+offset_left = 80
+offset_top = 6
+offset_right = 96
+offset_bottom = 22
+mouse_filter = 2
+texture = ExtResource("21_84067")
+
+[node name="TextoAlmas" type="Label" parent="Raiz/Almas"]
+layout_mode = 0
+offset_left = 8
+offset_top = 2
+offset_right = 76
+offset_bottom = 24
+mouse_filter = 2
+text = "0"
+horizontal_alignment = 2
+theme_override_fonts/font = ExtResource("1_07579")
+theme_override_colors/font_color = Color(0.92, 0.82, 0.6, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 15
+unique_name_in_owner = true
+
+[node name="Bussola" type="Control" parent="Raiz"]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1
+anchor_right = 0.5
+anchor_bottom = 1
+offset_left = -130
+offset_top = -26
+offset_right = 130
+offset_bottom = -10
+
+[node name="Fundo" type="TextureRect" parent="Raiz/Bussola"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 260
+offset_bottom = 14
+mouse_filter = 2
+texture = ExtResource("22_54458")
+
+[node name="MarcadorBussola" type="TextureRect" parent="Raiz/Bussola"]
+layout_mode = 0
+offset_left = 6
+offset_top = 0
+offset_right = 19
+offset_bottom = 13
+mouse_filter = 2
+texture = ExtResource("23_98955")
+unique_name_in_owner = true
+
+[node name="Objetivo" type="Control" parent="Raiz"]
+mouse_filter = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1
+anchor_top = 0
+anchor_right = 1
+anchor_bottom = 0
+offset_left = -216
+offset_top = 8
+offset_right = -8
+offset_bottom = 58
+
+[node name="NomeArea" type="Label" parent="Raiz/Objetivo"]
+layout_mode = 0
+offset_left = 0
+offset_top = 0
+offset_right = 208
+offset_bottom = 18
+mouse_filter = 2
+text = "Ruínas Esquecidas"
+horizontal_alignment = 2
+theme_override_fonts/font = ExtResource("1_07579")
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 14
+
+[node name="TextoObjetivo" type="Label" parent="Raiz/Objetivo"]
+layout_mode = 0
+offset_left = 0
+offset_top = 20
+offset_right = 208
+offset_bottom = 34
+mouse_filter = 2
+text = "Encontre a passagem para a arena"
+horizontal_alignment = 2
+theme_override_colors/font_color = Color(0.75, 0.68, 0.55, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+unique_name_in_owner = true
+
+[node name="Aviso" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1
+anchor_right = 0.5
+anchor_bottom = 1
+offset_left = -250
+offset_top = -62
+offset_right = 250
+offset_bottom = -44
+mouse_filter = 2
+text = ""
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.95, 0.88, 0.7, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 13
+unique_name_in_owner = true
+
+[node name="Dica" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1
+anchor_right = 0.5
+anchor_bottom = 1
+offset_left = -330
+offset_top = -80
+offset_right = 330
+offset_bottom = -64
+mouse_filter = 2
+text = "WASD mover   Mouse/Clique atacar   Espaço esquivar   Q curar   E usar item   1-4 itens   Esc pausa"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.8, 0.74, 0.6, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+unique_name_in_owner = true
+
+[node name="TituloArea" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -300
+offset_top = -20
+offset_right = 300
+offset_bottom = 20
+mouse_filter = 2
+text = "RUÍNAS ESQUECIDAS"
+horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("1_07579")
+theme_override_colors/font_color = Color(0.92, 0.8, 0.52, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+unique_name_in_owner = true
+
+[node name="SubtituloArea" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.3
+anchor_right = 0.5
+anchor_bottom = 0.3
+offset_left = -300
+offset_top = 22
+offset_right = 300
+offset_bottom = 40
+mouse_filter = 2
+text = "Primeira área — Knight Souls"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.62, 0.5, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 13
+unique_name_in_owner = true
+

@@ -1,0 +1,125 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Gloock-Regular.ttf" id="1_07579"]
+[ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="2_57737"]
+[ext_resource type="Theme" path="res://resources/themes/tema_medieval.tres" id="3_15842"]
+[ext_resource type="Texture2D" path="res://assets/ui/panel.png" id="4_35766"]
+[ext_resource type="Texture2D" path="res://assets/ui/divider.png" id="5_14947"]
+
+[node name="MenuPausa" type="CanvasLayer"]
+process_mode = 3
+layer = 20
+script = ExtResource("2_57737")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_15842")
+
+[node name="Escurecer" type="ColorRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Painel" type="NinePatchRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150
+offset_top = -130
+offset_right = 150
+offset_bottom = 130
+mouse_filter = 2
+texture = ExtResource("4_35766")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+
+[node name="Titulo" type="Label" parent="Raiz/Painel"]
+layout_mode = 0
+offset_left = 0
+offset_top = 16
+offset_right = 300
+offset_bottom = 44
+mouse_filter = 2
+text = "PAUSADO"
+horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("1_07579")
+theme_override_colors/font_color = Color(0.86, 0.72, 0.42, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 22
+
+[node name="Divisor" type="TextureRect" parent="Raiz/Painel"]
+layout_mode = 0
+offset_left = 40
+offset_top = 46
+offset_right = 260
+offset_bottom = 55
+mouse_filter = 2
+texture = ExtResource("5_14947")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Botoes" type="VBoxContainer" parent="Raiz/Painel"]
+layout_mode = 0
+offset_left = 75
+offset_top = 64
+offset_right = 225
+offset_bottom = 164
+theme_override_constants/separation = 6
+
+[node name="BotaoContinuar" type="Button" parent="Raiz/Painel/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Continuar"
+unique_name_in_owner = true
+
+[node name="BotaoReiniciar" type="Button" parent="Raiz/Painel/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="BotaoMenu" type="Button" parent="Raiz/Painel/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Menu principal"
+
+[node name="BotaoSair" type="Button" parent="Raiz/Painel/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Sair do jogo"
+
+[node name="Ajuda" type="Label" parent="Raiz/Painel"]
+layout_mode = 0
+offset_left = 0
+offset_top = 176
+offset_right = 300
+offset_bottom = 236
+mouse_filter = 2
+text = "WASD mover · Clique atacar · Espaço esquivar
+Q curar · E usar item · 1-4 / roda escolhem item
+Esc pausar"
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.75, 0.68, 0.55, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+
+[connection signal="pressed" from="Raiz/Painel/Botoes/BotaoContinuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Raiz/Painel/Botoes/BotaoReiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Raiz/Painel/Botoes/BotaoMenu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Raiz/Painel/Botoes/BotaoSair" to="." method="_on_sair_pressed"]

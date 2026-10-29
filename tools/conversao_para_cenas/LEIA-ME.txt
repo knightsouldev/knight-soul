@@ -1,0 +1,11 @@
+ESTA PASTA É HISTÓRICO — NÃO RODE ESTES SCRIPTS A NÃO SER QUE QUEIRA RECOMEÇAR AS CENAS DO ZERO.
+
+Na versão 2 do projeto, os scripts daqui converteram o que antes era montado por código
+em cenas (.tscn) e recursos (.tres) reais. A partir daí, as CENAS SÃO A FONTE DA VERDADE:
+você edita direto no editor da Godot.
+
+Rodar de novo estes scripts SOBRESCREVE suas edições (por isso eles se recusam a rodar sem
+a opção --force). Se quiser mesmo assim: python3 tools/conversao_para_cenas/gen_resources.py --force
+
+Ordem usada: gen_resources.py -> gen_scenes_actors.py -> gen_scenes_ui.py -> gen_scene_level.py
+(os dados de entrada ficam em tools/data/).

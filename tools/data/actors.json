@@ -1,0 +1,227 @@
+{
+ "player": {
+  "fw": 48,
+  "fh": 56,
+  "foot": 4,
+  "anims": {
+   "idle": {
+    "frames": 4,
+    "fps": 5,
+    "loop": true
+   },
+   "walk": {
+    "frames": 6,
+    "fps": 11,
+    "loop": true
+   },
+   "attack1": {
+    "frames": 6,
+    "fps": 12,
+    "loop": false,
+    "phases": {
+     "wind": 2,
+     "act": 2,
+     "rec": 2
+    }
+   },
+   "attack2": {
+    "frames": 6,
+    "fps": 12,
+    "loop": false,
+    "phases": {
+     "wind": 2,
+     "act": 2,
+     "rec": 2
+    }
+   },
+   "dodge": {
+    "frames": 5,
+    "fps": 12,
+    "loop": false
+   },
+   "hurt": {
+    "frames": 2,
+    "fps": 8,
+    "loop": false
+   },
+   "death": {
+    "frames": 6,
+    "fps": 8,
+    "loop": false
+   },
+   "heal": {
+    "frames": 5,
+    "fps": 8,
+    "loop": false
+   }
+  },
+  "folder": "characters"
+ },
+ "soldier": {
+  "fw": 48,
+  "fh": 56,
+  "foot": 4,
+  "anims": {
+   "idle": {
+    "frames": 4,
+    "fps": 4,
+    "loop": true
+   },
+   "walk": {
+    "frames": 6,
+    "fps": 8,
+    "loop": true
+   },
+   "attack": {
+    "frames": 8,
+    "fps": 10,
+    "loop": false,
+    "phases": {
+     "wind": 3,
+     "act": 2,
+     "rec": 3
+    }
+   },
+   "hurt": {
+    "frames": 2,
+    "fps": 8,
+    "loop": false
+   },
+   "death": {
+    "frames": 6,
+    "fps": 8,
+    "loop": false
+   }
+  },
+  "folder": "enemies"
+ },
+ "guardian": {
+  "fw": 68,
+  "fh": 76,
+  "foot": 5,
+  "anims": {
+   "idle": {
+    "frames": 4,
+    "fps": 3,
+    "loop": true
+   },
+   "walk": {
+    "frames": 6,
+    "fps": 6,
+    "loop": true
+   },
+   "attack": {
+    "frames": 11,
+    "fps": 9,
+    "loop": false,
+    "phases": {
+     "wind": 5,
+     "act": 2,
+     "rec": 4
+    }
+   },
+   "hurt": {
+    "frames": 2,
+    "fps": 6,
+    "loop": false
+   },
+   "death": {
+    "frames": 6,
+    "fps": 7,
+    "loop": false
+   }
+  },
+  "folder": "enemies"
+ },
+ "wraith": {
+  "fw": 60,
+  "fh": 66,
+  "foot": 6,
+  "anims": {
+   "idle": {
+    "frames": 6,
+    "fps": 6,
+    "loop": true
+   },
+   "cast": {
+    "frames": 7,
+    "fps": 10,
+    "loop": false,
+    "phases": {
+     "wind": 4,
+     "act": 1,
+     "rec": 2
+    }
+   },
+   "hurt": {
+    "frames": 2,
+    "fps": 8,
+    "loop": false
+   },
+   "death": {
+    "frames": 6,
+    "fps": 8,
+    "loop": false
+   }
+  },
+  "folder": "enemies"
+ },
+ "boss": {
+  "fw": 150,
+  "fh": 152,
+  "foot": 6,
+  "anims": {
+   "idle": {
+    "frames": 4,
+    "fps": 3,
+    "loop": true
+   },
+   "walk": {
+    "frames": 6,
+    "fps": 6,
+    "loop": true
+   },
+   "strike": {
+    "frames": 9,
+    "fps": 9,
+    "loop": false,
+    "phases": {
+     "wind": 4,
+     "act": 2,
+     "rec": 3
+    }
+   },
+   "charge": {
+    "frames": 8,
+    "fps": 9,
+    "loop": false,
+    "phases": {
+     "wind": 3,
+     "dash": 2,
+     "rec": 3
+    }
+   },
+   "slam": {
+    "frames": 9,
+    "fps": 9,
+    "loop": false,
+    "phases": {
+     "wind": 4,
+     "act": 2,
+     "rec": 3
+    }
+   },
+   "hurt": {
+    "frames": 1,
+    "fps": 6,
+    "loop": false
+   },
+   "death": {
+    "frames": 8,
+    "fps": 7,
+    "loop": false
+   }
+  },
+  "folder": "bosses"
+ }
+}

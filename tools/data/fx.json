@@ -1,0 +1,16 @@
+{
+ "slash": {
+  "file": "res://assets/effects/slash.png",
+  "fw": 96,
+  "fh": 96,
+  "frames": 5,
+  "fps": 30
+ },
+ "spark": {
+  "file": "res://assets/effects/spark.png",
+  "fw": 32,
+  "fh": 32,
+  "frames": 4,
+  "fps": 24
+ }
+}

@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy_stats.gd" id="1_92278"]
+
+[resource]
+script = ExtResource("1_92278")
+max_health = 480.0
+body_radius = 26.0
+walk_speed = 58.0
+chase_speed = 58.0
+detect_range = 9999.0
+lose_range = 9999.0
+attack_range = 100.0
+attack_reach = 0.0
+attack_arc_deg = 0.0
+windup_time = 1.0
+active_time = 0.16
+recover_time = 1.0
+cooldown_time = 0.0
+damage = 34.0
+lunge_speed = 0.0
+stagger_time = 0.0
+knockback_multiplier = 0.0
+souls_reward = 1500

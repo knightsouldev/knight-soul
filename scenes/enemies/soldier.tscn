@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/enemy.gd" id="1_17583"]
+[ext_resource type="Resource" path="res://resources/stats/soldier.tres" id="2_32642"]
+[ext_resource type="Texture2D" path="res://assets/effects/shadow.png" id="4_07328"]
+[ext_resource type="Shader" path="res://resources/shaders/flash.gdshader" id="5_89424"]
+[ext_resource type="SpriteFrames" path="res://resources/frames/soldier.tres" id="7_94789"]
+[ext_resource type="Script" path="res://scripts/combat/health.gd" id="8_58037"]
+[ext_resource type="Script" path="res://scripts/combat/telegraph.gd" id="9_24229"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3"]
+points = PackedVector2Array(8.13, 1.68, 3.37, 4.07, -3.37, 4.07, -8.13, 1.68, -8.13, -1.68, -3.37, -4.07, 3.37, -4.07, 8.13, -1.68)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6"]
+resource_local_to_scene = true
+shader = ExtResource("5_89424")
+
+[node name="SoldadoCorrompido" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_17583")
+stats = ExtResource("2_32642")
+blood_color = Color(0.35, 0.1, 0.5, 1)
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_3")
+
+[node name="Sombra" type="Sprite2D" parent="."]
+z_index = -4
+scale = Vector2(0.4812, 0.4812)
+texture = ExtResource("4_07328")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_6")
+sprite_frames = ExtResource("7_94789")
+animation = &"idle_front"
+autoplay = "idle_front"
+offset = Vector2(0, -24)
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("8_58037")
+
+[node name="Telegrafo" type="Node2D" parent="."]
+script = ExtResource("9_24229")
+

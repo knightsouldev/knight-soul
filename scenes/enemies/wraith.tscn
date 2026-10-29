@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/enemies/wraith.gd" id="1_27204"]
+[ext_resource type="Resource" path="res://resources/stats/wraith.tres" id="2_99770"]
+[ext_resource type="PackedScene" path="res://scenes/effects/projectile.tscn" id="3_60685"]
+[ext_resource type="Texture2D" path="res://assets/effects/shadow.png" id="5_07328"]
+[ext_resource type="Shader" path="res://resources/shaders/flash.gdshader" id="6_89424"]
+[ext_resource type="SpriteFrames" path="res://resources/frames/wraith.tres" id="8_85621"]
+[ext_resource type="Script" path="res://scripts/combat/health.gd" id="9_58037"]
+[ext_resource type="Script" path="res://scripts/combat/telegraph.gd" id="10_24229"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_4"]
+points = PackedVector2Array(8.13, 1.68, 3.37, 4.07, -3.37, 4.07, -8.13, 1.68, -8.13, -1.68, -3.37, -4.07, 3.37, -4.07, 8.13, -1.68)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7"]
+resource_local_to_scene = true
+shader = ExtResource("6_89424")
+
+[node name="Espectro" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_27204")
+stats = ExtResource("2_99770")
+blood_color = Color(0.4, 0.7, 1, 1)
+projectile_scene = ExtResource("3_60685")
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_4")
+
+[node name="Sombra" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.55)
+z_index = -4
+scale = Vector2(0.4812, 0.4812)
+texture = ExtResource("5_07328")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_7")
+sprite_frames = ExtResource("8_85621")
+animation = &"idle_front"
+autoplay = "idle_front"
+offset = Vector2(0, -27)
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("9_58037")
+
+[node name="Telegrafo" type="Node2D" parent="."]
+script = ExtResource("10_24229")
+

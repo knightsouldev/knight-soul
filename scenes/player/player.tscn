@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_45227"]
+[ext_resource type="Texture2D" path="res://assets/effects/shadow.png" id="3_07328"]
+[ext_resource type="Shader" path="res://resources/shaders/flash.gdshader" id="4_89424"]
+[ext_resource type="SpriteFrames" path="res://resources/frames/player.tres" id="6_07905"]
+[ext_resource type="Script" path="res://scripts/combat/health.gd" id="7_58037"]
+[ext_resource type="Texture2D" path="res://assets/effects/light.png" id="8_23721"]
+[ext_resource type="Script" path="res://scripts/world/camera_rig.gd" id="9_72725"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_2"]
+points = PackedVector2Array(5.91, 1.22, 2.45, 2.96, -2.45, 2.96, -5.91, 1.22, -5.91, -1.22, -2.45, -2.96, 2.45, -2.96, 5.91, -1.22)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5"]
+resource_local_to_scene = true
+shader = ExtResource("4_89424")
+
+[node name="Jogador" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_45227")
+max_health = 100.0
+body_radius = 8.0
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_2")
+
+[node name="Sombra" type="Sprite2D" parent="."]
+z_index = -4
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_07328")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_5")
+sprite_frames = ExtResource("6_07905")
+animation = &"idle_front"
+autoplay = "idle_front"
+offset = Vector2(0, -24)
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("7_58037")
+
+[node name="Luz" type="PointLight2D" parent="."]
+position = Vector2(0, -14)
+scale = Vector2(1, 0.6)
+color = Color(0.62, 0.78, 1, 1)
+energy = 0.55
+texture = ExtResource("8_23721")
+texture_scale = 1.15
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2(0, -16)
+position_smoothing_enabled = true
+position_smoothing_speed = 7.0
+script = ExtResource("9_72725")
+
+[node name="Poeira" type="CPUParticles2D" parent="Camera"]
+z_index = 30
+amount = 50
+lifetime = 9.0
+preprocess = 9.0
+local_coords = false
+emission_shape = 3
+emission_rect_extents = Vector2(460, 260)
+direction = Vector2(1, -0.3)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 8.0
+scale_amount_min = 1.0
+scale_amount_max = 2.0
+color = Color(0.75, 0.82, 1, 0.3)
+

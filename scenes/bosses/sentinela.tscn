@@ -1,0 +1,55 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/bosses/boss.gd" id="1_14709"]
+[ext_resource type="Resource" path="res://resources/stats/sentinela.tres" id="2_28492"]
+[ext_resource type="Texture2D" path="res://assets/effects/shadow.png" id="4_07328"]
+[ext_resource type="Shader" path="res://resources/shaders/flash.gdshader" id="5_89424"]
+[ext_resource type="SpriteFrames" path="res://resources/frames/boss.tres" id="7_77943"]
+[ext_resource type="Script" path="res://scripts/combat/health.gd" id="8_58037"]
+[ext_resource type="Script" path="res://scripts/combat/telegraph.gd" id="9_24229"]
+[ext_resource type="Texture2D" path="res://assets/effects/light.png" id="10_23721"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_3"]
+points = PackedVector2Array(19.22, 3.98, 7.96, 9.61, -7.96, 9.61, -19.22, 3.98, -19.22, -3.98, -7.96, -9.61, 7.96, -9.61, 19.22, -3.98)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6"]
+resource_local_to_scene = true
+shader = ExtResource("5_89424")
+
+[node name="SentinelaDaRuina" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 1
+motion_mode = 1
+script = ExtResource("1_14709")
+stats = ExtResource("2_28492")
+blood_color = Color(0.5, 0.15, 0.7, 1)
+
+[node name="Colisao" type="CollisionShape2D" parent="."]
+shape = SubResource("ConvexPolygonShape2D_3")
+
+[node name="Sombra" type="Sprite2D" parent="."]
+z_index = -4
+scale = Vector2(1.1375, 1.1375)
+texture = ExtResource("4_07328")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_6")
+sprite_frames = ExtResource("7_77943")
+animation = &"idle_front"
+autoplay = "idle_front"
+offset = Vector2(0, -70)
+
+[node name="Vida" type="Node" parent="."]
+script = ExtResource("8_58037")
+
+[node name="Telegrafo" type="Node2D" parent="."]
+script = ExtResource("9_24229")
+
+[node name="Luz" type="PointLight2D" parent="."]
+position = Vector2(0, -50)
+scale = Vector2(1, 0.6)
+color = Color(0.65, 0.3, 1, 1)
+energy = 0.7
+texture = ExtResource("10_23721")
+texture_scale = 1.6
+

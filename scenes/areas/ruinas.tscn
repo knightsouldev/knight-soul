@@ -1,0 +1,2071 @@
+[gd_scene load_steps=64 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/level.gd" id="1_50802"]
+[ext_resource type="Texture2D" path="res://assets/environments/far_ruins.png" id="4_50564"]
+[ext_resource type="Script" path="res://scripts/world/mist_drift.gd" id="5_66932"]
+[ext_resource type="Texture2D" path="res://assets/environments/fog.png" id="6_63112"]
+[ext_resource type="TileSet" path="res://resources/tilesets/chao.tres" id="7_29115"]
+[ext_resource type="Texture2D" path="res://assets/environments/rune_small_0.png" id="8_64205"]
+[ext_resource type="Texture2D" path="res://assets/environments/rune_small_1.png" id="9_70973"]
+[ext_resource type="Texture2D" path="res://assets/environments/rune_small_2.png" id="10_92109"]
+[ext_resource type="Texture2D" path="res://assets/environments/rune_circle.png" id="11_31502"]
+[ext_resource type="Texture2D" path="res://assets/effects/light.png" id="12_23721"]
+[ext_resource type="Script" path="res://scripts/world/bordas_do_chao.gd" id="13_00890"]
+[ext_resource type="PackedScene" path="res://scenes/world/pieces/parede.tscn" id="14_81512"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h1_v1.png" id="15_11031"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h1_v2.png" id="16_38151"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h2_v1.png" id="17_03284"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h2_v0.png" id="18_25604"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h3_v2.png" id="19_48570"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h3_v1.png" id="20_53482"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h2_banner_L.png" id="21_27372"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h2_v2.png" id="22_15076"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h1_v0.png" id="23_50887"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h3_banner_L.png" id="24_62746"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h3_arch_L.png" id="25_97268"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h3_v0.png" id="26_88122"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h3_banner_R.png" id="27_10457"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_h2_banner_R.png" id="28_81423"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_low_v1.png" id="29_77115"]
+[ext_resource type="Texture2D" path="res://assets/environments/wall_low_v0.png" id="30_07147"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/brazier.tscn" id="31_75674"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/candles.tscn" id="32_86384"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/statue_lantern.tscn" id="33_07460"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/pillar_broken.tscn" id="34_16440"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/pillar_stump.tscn" id="35_14540"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/signpost.tscn" id="36_71221"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/plant_0.tscn" id="37_06344"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/plant_2.tscn" id="38_47171"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/plant_1.tscn" id="39_90093"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/rubble_1.tscn" id="40_04251"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/rubble_0.tscn" id="41_64926"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/rubble_2.tscn" id="42_59925"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/pillar_tall.tscn" id="43_51069"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/statue_prayer.tscn" id="44_82975"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/blue_pedestal.tscn" id="45_37906"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/crystal_0.tscn" id="46_85733"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/crystal_1.tscn" id="47_65824"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/pillar_short.tscn" id="48_68763"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/gate_0.tscn" id="49_77417"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/gate_1.tscn" id="50_13676"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/gate_2.tscn" id="51_53794"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/gate_3.tscn" id="52_61415"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/gate_veil.tscn" id="53_62108"]
+[ext_resource type="PackedScene" path="res://scenes/world/props/portal_plane.tscn" id="54_09604"]
+[ext_resource type="PackedScene" path="res://scenes/effects/pickup.tscn" id="55_44135"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/soldier.tscn" id="56_77426"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/guardian.tscn" id="57_98294"]
+[ext_resource type="PackedScene" path="res://scenes/enemies/wraith.tscn" id="58_77641"]
+[ext_resource type="PackedScene" path="res://scenes/bosses/sentinela.tscn" id="59_49414"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="60_76907"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="61_02931"]
+[ext_resource type="PackedScene" path="res://scenes/ui/pause_menu.tscn" id="62_13872"]
+[ext_resource type="PackedScene" path="res://scenes/ui/end_screen.tscn" id="63_41944"]
+
+[sub_resource type="Gradient" id="Gradient_2"]
+offsets = PackedFloat32Array(0, 1)
+colors = PackedColorArray(0.02, 0.03, 0.06, 1, 0.07, 0.1, 0.17, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3"]
+gradient = SubResource("Gradient_2")
+width = 8
+height = 256
+fill_from = Vector2(0, 0)
+fill_to = Vector2(0, 1)
+
+[node name="RuinasEsquecidas" type="Node2D"]
+script = ExtResource("1_50802")
+
+[node name="Ambiente" type="CanvasModulate" parent="."]
+color = Color(0.4, 0.43, 0.56, 1)
+
+[node name="FundoCeu" type="CanvasLayer" parent="."]
+layer = -120
+
+[node name="Degrade" type="TextureRect" parent="FundoCeu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_3")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="FundoDistante" type="ParallaxBackground" parent="."]
+layer = -100
+
+[node name="Camada" type="ParallaxLayer" parent="FundoDistante"]
+motion_scale = Vector2(0.22, 0.22)
+motion_mirroring = Vector2(1024, 0)
+
+[node name="RuinasAoFundo" type="Sprite2D" parent="FundoDistante/Camada"]
+modulate = Color(0.55, 0.62, 0.85, 0.95)
+texture = ExtResource("4_50564")
+centered = false
+offset = Vector2(0, -40)
+
+[node name="Camadas" type="Node2D" parent="."]
+
+[node name="Neblina" type="Node2D" parent="Camadas"]
+z_index = -11
+script = ExtResource("5_66932")
+
+[node name="Nevoa_01" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1029)
+position = Vector2(343.6155, 986.547)
+scale = Vector2(3.1838, 1.6456)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_02" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1247)
+position = Vector2(1419.918, 1304.054)
+scale = Vector2(2.1811, 1.3283)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_03" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1197)
+position = Vector2(-257.9105, 1047.5438)
+scale = Vector2(2.2907, 1.678)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_04" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1023)
+position = Vector2(926.4975, 924.2801)
+scale = Vector2(2.0912, 1.6826)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_05" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1819)
+position = Vector2(-182.103, 379.2637)
+scale = Vector2(2.1904, 1.1723)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_06" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.159)
+position = Vector2(1184.9997, 1415.5627)
+scale = Vector2(2.4014, 1.324)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_07" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1522)
+position = Vector2(1091.2962, 1257.3202)
+scale = Vector2(2.9926, 1.1185)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_08" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1272)
+position = Vector2(1834.1572, 1359.9593)
+scale = Vector2(2.5416, 1.0624)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_09" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1981)
+position = Vector2(516.7451, 1098.0985)
+scale = Vector2(3.3364, 1.1854)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_10" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1274)
+position = Vector2(175.1061, 1120.0209)
+scale = Vector2(3.0778, 1.2496)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_11" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1581)
+position = Vector2(1009.5749, 765.8212)
+scale = Vector2(2.2749, 1.5463)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_12" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1072)
+position = Vector2(1571.8657, 1258.9294)
+scale = Vector2(2.5618, 1.4638)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_13" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1856)
+position = Vector2(369.4412, 744.4407)
+scale = Vector2(2.5608, 1.6665)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_14" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1159)
+position = Vector2(1438.366, 1404.4979)
+scale = Vector2(2.6142, 1.5985)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_15" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1293)
+position = Vector2(862.1549, 793.3132)
+scale = Vector2(2.9947, 1.3104)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_16" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.1608)
+position = Vector2(-18.5849, 1067.2859)
+scale = Vector2(3.5821, 1.2052)
+texture = ExtResource("6_63112")
+
+[node name="Nevoa_17" type="Sprite2D" parent="Camadas/Neblina"]
+modulate = Color(0.6, 0.7, 0.95, 0.176)
+position = Vector2(875.5901, 1590.2312)
+scale = Vector2(3.1896, 1.0827)
+texture = ExtResource("6_63112")
+
+[node name="Chao" type="TileMapLayer" parent="Camadas"]
+z_index = -10
+position = Vector2(0, 16)
+tile_map_data = PackedByteArray("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AABDAA0AAAAHAAAAAAAXAA4AAAAEAAAAAAAYAA4AAAACAAAAAAAZAA4AAAAEAAAAAAAaAA4AAAABAAAAAAAbAA4AAAAAAAAAAAAcAA4AAAAHAAAAAAAdAA4AAAAAAAAAAAAeAA4AAAAAAAAAAAAfAA4AAAABAAAAAAAgAA4AAAAAAAAAAAAhAA4AAAACAAAAAAAiAA4AAAAAAAAAAAAjAA4AAAAAAAAAAAAkAA4AAAAEAAAAAAA0AA4AAAAEAAAAAAA1AA4AAAAHAAAAAAA2AA4AAAAAAAAAAAA3AA4AAAAGAAAAAAA4AA4AAAAEAAAAAAA5AA4AAAACAAAAAAA6AA4AAAABAAAAAAA7AA4AAAAGAAAAAAA8AA4AAAACAAAAAAA9AA4AAAADAAAAAAA+AA4AAAAAAAAAAAA/AA4AAAAAAAAAAABAAA4AAAABAAAAAABBAA4AAAACAAAAAABCAA4AAAACAAAAAABDAA4AAAABAAAAAAAcAA8AAAABAAAAAAAdAA8AAAAEAAAAAAAeAA8AAAAHAAAAAAA0AA8AAAACAAAAAAA1AA8AAAAGAAAAAAA2AA8AAAAHAAAAAAA3AA8AAAAGAAAAAAA4AA8AAAAAAAAAAAA5AA8AAAABAAAAAAA6AA8AAAAHAAAAAAA7AA8AAAAAAAAAAAA8AA8AAAAAAAAAAAA9AA8AAAAGAAAAAAA+AA8AAAACAAAAAAA/AA8AAAACAAAAAABAAA8AAAAGAAAAAABBAA8AAAAGAAAAAABCAA8AAAACAAAAAABDAA8AAAAAAAAAAAAcABAAAAABAAAAAAAdABAAAAAHAAAAAAAeABAAAAAGAAAAAAA0ABAAAAAEAAAAAAA1ABAAAAACAAAAAAA2ABAAAAAFAAAAAAA3ABAAAAAAAAAAAAA4ABAAAAAFAAAAAAA5ABAAAAAEAAAAAAA6ABAAAAACAAAAAAA7ABAAAAAHAAAAAAA8ABAAAAAEAAAAAAA9ABAAAAAAAAAAAAA+ABAAAAAAAAAAAAA/ABAAAAABAAAAAABAABAAAAABAAAAAABBABAAAAAFAAAAAABCABAAAAADAAAAAABDABAAAAAGAAAAAAAcABEAAAAHAAAAAAAdABEAAAAAAAAAAAAeABEAAAAAAAAAAAA0ABEAAAAGAAAAAAA1ABEAAAAFAAAAAAA2ABEAAAAHAAAAAAA3ABEAAAAHAAAAAAA4ABEAAAACAAAAAAA5ABEAAAAHAAAAAAA6ABEAAAAAAAAAAAA7ABEAAAAHAAAAAAA8ABEAAAACAAAAAAA9ABEAAAAAAAAAAAA+ABEAAAACAAAAAAA/ABEAAAAAAAAAAABAABEAAAACAAAAAABBABEAAAACAAAAAABCABEAAAAGAAAAAABDABEAAAAAAAAAAAAcABIAAAACAAAAAAAdABIAAAAAAAAAAAAeABIAAAABAAAAAAA7ABIAAAAGAAAAAAA8ABIAAAAHAAAAAAAcABMAAAABAAAAAAAdABMAAAAAAAAAAAAeABMAAAAAAAAAAAA7ABMAAAAAAAAAAAA8ABMAAAAAAAAAAAAcABQAAAAHAAAAAAAdABQAAAAFAAAAAAAeABQAAAAHAAAAAAA7ABQAAAAEAAAAAAA8ABQAAAABAAAAAAAcABUAAAAGAAAAAAAdABUAAAAAAAAAAAAeABUAAAAGAAAAAAA7ABUAAAAHAAAAAAA8ABUAAAAGAAAAAAAcABYAAAACAAAAAAAdABYAAAAEAAAAAAAeABYAAAABAAAAAAA7ABYAAAAHAAAAAAA8ABYAAAAAAAAAAAAWABcAAAABAAAAAAAXABcAAAABAAAAAAAYABcAAAABAAAAAAAZABcAAAAAAAAAAAAaABcAAAAHAAAAAAAbABcAAAACAAAAAAAcABcAAAAAAAAAAAAdABcAAAAHAAAAAAAeABcAAAAGAAAAAAAfABcAAAAAAAAAAAAgABcAAAABAAAAAAAhABcAAAACAAAAAAAiABcAAAACAAAAAAAjABcAAAABAAAAAAAkABcAAAAAAAAAAAAlABcAAAAAAAAAAAAmABcAAAABAAAAAAA7ABcAAAAGAAAAAAA8ABcAAAAAAAAAAAAWABgAAAACAAAAAAAXABgAAAAAAAAAAAAYABgAAAAHAAAAAAAZABgAAAAAAAAAAAAaABgAAAAHAAAAAAAbABgAAAABAAAAAAAcABgAAAAAAAAAAAAdABgAAAAAAAAAAAAeABgAAAACAAAAAAAfABgAAAAAAAAAAAAgABgAAAABAAAAAAAhABgAAAAAAAAAAAAiABgAAAAGAAAAAAAjABgAAAAHAAAAAAAkABgAAAABAAAAAAAlABgAAAAHAAAAAAAmABgAAAACAAAAAAA7ABgAAAAGAAAA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AAA0AB8AAAAGAAAAAAA1AB8AAAAAAAAAAAA2AB8AAAACAAAAAAA3AB8AAAAGAAAAAAA4AB8AAAABAAAAAAA5AB8AAAAHAAAAAAA6AB8AAAAGAAAAAAA7AB8AAAACAAAAAAA8AB8AAAAAAAAAAAA9AB8AAAAFAAAAAAA+AB8AAAAHAAAAAAA/AB8AAAAAAAAAAABAAB8AAAAAAAAAAABBAB8AAAADAAAAAABCAB8AAAACAAAAAAAWACAAAAABAAAAAAAXACAAAAAAAAAAAAAYACAAAAAEAAAAAAAZACAAAAAAAAAAAAAaACAAAAAAAAAAAAAbACAAAAAHAAAAAAAcACAAAAAAAAAAAAAdACAAAAAEAAAAAAAeACAAAAAAAAAAAAAfACAAAAACAAAAAAAgACAAAAAAAAAAAAAhACAAAAAAAAAAAAAiACAAAAACAAAAAAAjACAAAAAGAAAAAAAkACAAAAAGAAAAAAAlACAAAAAAAAAAAAAmACAAAAAAAAAAAAAzACAAAAACAAAAAAA0ACAAAAAAAAAAAAA1ACAAAAAGAAAAAAA2ACAAAAAHAAAAAAA3ACAAAAAGAAAAAAA4ACAAAAACAAAAAAA5ACAAAAABAAAAAAA6ACAAAAAGAAAAAAA7ACAAAAAAAAAAAAA8ACAAAAADAAAAAAA9ACAAAAAFAAAAAAA+ACAAAAAGAAAAAAA/ACAAAAABAAAAAABAACAAAAAAAAAAAABBACAAAAACAAAAAABCACAAAAABAAAAAAAWACEAAAABAAAAAAAXACEAAAADAAAAAAAYACEAAAAHAAAAAAAZACEAAAAAAAAAAAAaACEAAAACAAAAAAAbACEAAAAAAAAAAAAcACEAAAAHAAAAAAAdACEAAAAGAAAAAAAeACEAAAACAAAAAAAfACEAAAAEAAAAAAAgACEAAAAGAAAAAAAhACEAAAACAAAAAAAiACEAAAABAAAAAAAjACEAAAAHAAAAAAAkACEAAAABAAAAAAAlACEAAAAHAAAAAAAmACEAAAAGAAAAAAAzACEAAAAFAAAAAAA0ACEAAAAAAAAAAAA1ACEAAAAAAAAAAAA2ACEAAAAEAAAAAAA3ACEAAAAGAAAAAAA4ACEAAAACAAAAAAA5ACEAAAAGAAAAAAA6ACEAAAAGAAAAAAA7ACEAAAAAAAAAAAA8ACEAAAAAAAAAAAA9ACEAAAAHAAAAAAA+ACEAAAAAAAAAAAA/ACEAAAAEAAAAAABAACEAAAACAAAAAABBACEAAAAEAAAAAABCACEAAAAGAAAAAAAWACIAAAABAAAAAAAXACIAAAAEAAAAAAAYACIAAAAGAAAAAAAZACIAAAACAAAAAAAaACIAAAAGAAAAAAAbACIAAAAAAAAAAAAcACIAAAACAAAAAAAdACIAAAAEAAAAAAAeACIAAAAAAAAAAAAfACIAAAAGAAAAAAAgACIAAAABAAAAAAAhACIAAAAEAAAAAAAiACIAAAABAAAAAAAjACIAAAAFAAAAAAAkACIAAAAAAAAAAAAlACIAAAAGAAAAAAAmACIAAAACAAAAAAAWACMAAAABAAAAAAAXACMAAAACAAAAAAAYACMAAAAGAAAAAAAZACMAAAAAAAAAAAAaACMAAAAGAAAAAAAbACMAAAACAAAAAAAcACMAAAAAAAAAAAAdACMAAAAAAAAAAAAeACMAAAAHAAAAAAAfACMAAAAAAAAAAAAgACMAAAACAAAAAAAhACMAAAAAAAAAAAAiACMAAAAGAAAAAAAjACMAAAAGAAAAAAAkACMAAAAAAAAAAAAlACMAAAAHAAAAAAAmACMAAAAAAAAAAAAWACQAAAACAAAAAAAXACQAAAAHAAAAAAAYACQAAAACAAAAAAAZACQAAAAHAAAAAAAaACQAAAAAAAAAAAAbACQAAAABAAAAAAAcACQAAAAAAAAAAAAdACQAAAAHAAAAAAAeACQAAAAGAAAAAAAfACQAAAACAAAAAAAgACQAAAABAAAAAAAhACQAAAAGAAAAAAAiACQAAAAHAAAAAAAjACQAAAAGAAAAAAAkACQAAAAEAAAAAAAlACQAAAAGAAAAAAAmACQAAAAGAAAAAAAWACUAAAACAAAAAAAXACUAAAAEAAAAAAAYACUAAAACAAAAAAAZACUAAAAAAAAAAAAaACUAAAAEAAAAAAAbACUAAAACAAAAAAAcACUAAAADAAAAAAAdACUAAAACAAAAAAAeACUAAAAGAAAAAAAfACUAAAABAAAAAAAgACUAAAACAAAAAAAhACUAAAAEAAAAAAAiACUAAAAAAAAAAAAjACUAAAACAAAAAAAkACUAAAACAAAAAAAlACUAAAAHAAAAAAAmACUAAAAEAAAAAAAWACYAAAAAAAAAAAAXACYAAAAEAAAAAAAYACYAAAAAAAAAAAAZACYAAAAEAAAAAAAaACYAAAAEAAAAAAAbACYAAAAGAAAAAAAcACYAAAAAAAAAAAAdACYAAAAGAAAAAAAeACYAAAAAAAAAAAAfACYAAAACAAAAAAAgACYAAAABAAAAAAAhACYAAAAHAAAAAAAiACYAAAAAAAAAAAAjACYAAAABAAAAAAAkACYAAAACAAAAAAAlACYAAAAAAAAAAAAmACYAAAABAAAAAAA=")
+tile_set = ExtResource("7_29115")
+unique_name_in_owner = true
+
+[node name="Marcas" type="Node2D" parent="Camadas"]
+z_index = -9
+
+[node name="Runa_0_8_8" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(0, 272)
+texture = ExtResource("8_64205")
+
+[node name="Runa_1_10_9" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(32, 320)
+texture = ExtResource("9_70973")
+
+[node name="Runa_2_7_10" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(-96, 288)
+texture = ExtResource("10_92109")
+
+[node name="Runa_1_29_8" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(672, 608)
+texture = ExtResource("9_70973")
+
+[node name="Runa_2_44_8" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(1152, 848)
+texture = ExtResource("10_92109")
+
+[node name="Runa_0_30_31" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(-32, 992)
+texture = ExtResource("8_64205")
+
+[node name="Runa_1_60_30" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(960, 1440)
+texture = ExtResource("9_70973")
+
+[node name="CirculoRunico" type="Sprite2D" parent="Camadas/Marcas"]
+modulate = Color(1, 1, 1, 0.95)
+position = Vector2(1568, 1136)
+texture = ExtResource("11_31502")
+
+[node name="LuzCirculo" type="PointLight2D" parent="Camadas/Marcas"]
+position = Vector2(1568, 1136)
+scale = Vector2(1, 0.6)
+color = Color(1, 0.75, 0.35, 1)
+energy = 0.35
+texture = ExtResource("12_23721")
+texture_scale = 1.7
+
+[node name="BordasDoChao" type="Node2D" parent="."]
+script = ExtResource("13_00890")
+floor_layer = NodePath("../Camadas/Chao")
+unique_name_in_owner = true
+
+[node name="Mundo" type="Node2D" parent="." groups=["fx_layer"]]
+y_sort_enabled = true
+
+[node name="Paredes" type="Node2D" parent="Mundo"]
+y_sort_enabled = true
+
+[node name="PatioInicial" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="CorredorInicial" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="PatioQuebrado" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="Passagem" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="AlcovaRecompensa" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="CorredorSul" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="SalaoGuardioes" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="CorredorLeste" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="PracaPortao" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="CorredorArena" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="ArenaChefe" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="Outros" type="Node2D" parent="Mundo/Paredes"]
+y_sort_enabled = true
+
+[node name="Decoracao" type="Node2D" parent="Mundo"]
+y_sort_enabled = true
+
+[node name="PatioInicial" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="CorredorInicial" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="PatioQuebrado" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="Passagem" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="AlcovaRecompensa" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="CorredorSul" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="SalaoGuardioes" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="CorredorLeste" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="PracaPortao" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="CorredorArena" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="ArenaChefe" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="Outros" type="Node2D" parent="Mundo/Decoracao"]
+y_sort_enabled = true
+
+[node name="Portao" type="Node2D" parent="Mundo"]
+y_sort_enabled = true
+
+[node name="Itens" type="Node2D" parent="Mundo"]
+y_sort_enabled = true
+
+[node name="Inimigos" type="Node2D" parent="Mundo"]
+y_sort_enabled = true
+
+[node name="Parede_22_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(672, 398)
+texture = ExtResource("15_11031")
+offset = Vector2(-32, -58)
+
+[node name="Parede_23_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(704, 414)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_24_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(736, 430)
+texture = ExtResource("17_03284")
+offset = Vector2(-32, -86)
+
+[node name="Parede_25_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(768, 446)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_26_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(800, 462)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(832, 478)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_28_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(864, 494)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_29_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(896, 510)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_30_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(928, 526)
+texture = ExtResource("21_27372")
+offset = Vector2(-32, -86)
+
+[node name="Parede_31_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(960, 542)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_32_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(992, 558)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_33_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(1024, 574)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_34_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(1056, 590)
+texture = ExtResource("23_50887")
+offset = Vector2(-32, -58)
+
+[node name="Parede_35_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(1088, 606)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_36_1" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(1120, 622)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_2" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(640, 414)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_3_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(0, 126)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_4_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(32, 142)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_5_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(64, 158)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_6_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(96, 174)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_7_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(128, 190)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_8_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(160, 206)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_9_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(192, 222)
+texture = ExtResource("25_97268")
+offset = Vector2(-32, -114)
+
+[node name="Parede_10_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(224, 238)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_11_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(256, 254)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_12_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(288, 270)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_13_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(320, 286)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_14_3" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(352, 302)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_22_3" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(608, 430)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_40_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1184, 718)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_41_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1216, 734)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_42_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1248, 750)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_43_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1280, 766)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_44_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1312, 782)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_45_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1344, 798)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_46_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1376, 814)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_47_3" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1408, 830)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1536, 894)
+texture = ExtResource("17_03284")
+offset = Vector2(-32, -86)
+
+[node name="Parede_52_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1568, 910)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_53_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1600, 926)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_54_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1632, 942)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_55_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1664, 958)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_56_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1696, 974)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_57_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1728, 990)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1760, 1006)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_59_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1792, 1022)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_60_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1824, 1038)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_61_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1856, 1054)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_62_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1888, 1070)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_63_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1920, 1086)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_64_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1952, 1102)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_65_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1984, 1118)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_66_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(2016, 1134)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_67_3" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(2048, 1150)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_4" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-32, 142)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_4" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(576, 446)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_40_4" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1152, 734)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_4" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1504, 910)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_5" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-64, 158)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_5" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(544, 462)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_40_5" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1120, 750)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_5" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1472, 926)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_6" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-96, 174)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_15_6" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(288, 366)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_16_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(320, 382)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_17_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(352, 398)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_18_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(384, 414)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_19_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(416, 430)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_20_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(448, 446)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_21_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(480, 462)
+texture = ExtResource("23_50887")
+offset = Vector2(-32, -58)
+
+[node name="Parede_22_6" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(512, 478)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_37_6" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(992, 718)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_38_6" parent="Mundo/Paredes/Passagem" instance=ExtResource("14_81512")]
+position = Vector2(1024, 734)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_39_6" parent="Mundo/Paredes/Passagem" instance=ExtResource("14_81512")]
+position = Vector2(1056, 750)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_40_6" parent="Mundo/Paredes/Passagem" instance=ExtResource("14_81512")]
+position = Vector2(1088, 766)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_51_6" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1440, 942)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_7" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-128, 190)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_51_7" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1408, 958)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_8" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-160, 206)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_8" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1376, 974)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_9" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-192, 222)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_40_9" parent="Mundo/Paredes/Passagem" instance=ExtResource("14_81512")]
+position = Vector2(992, 814)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_9" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1344, 990)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_10" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-224, 238)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_10" parent="Mundo/Paredes/CorredorInicial" instance=ExtResource("14_81512")]
+position = Vector2(384, 542)
+texture = ExtResource("17_03284")
+offset = Vector2(-32, -86)
+
+[node name="Parede_40_10" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(960, 830)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_10" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1312, 1006)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_11" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-256, 254)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_11" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(352, 558)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_40_11" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(928, 846)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_11" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1280, 1022)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_12" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-288, 270)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_22_12" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(320, 574)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_51_12" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1248, 1038)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_3_13" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-320, 286)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_22_13" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(288, 590)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_51_13" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1216, 1054)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_14" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(256, 606)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_51_14" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1184, 1070)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_15" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(384, 702)
+texture = ExtResource("28_81423")
+offset = Vector2(-32, -86)
+
+[node name="Parede_51_15" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1152, 1086)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_16" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(352, 718)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_16" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1120, 1102)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_17" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(320, 734)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_17" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1088, 1118)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_18" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(288, 750)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_18" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1280, 1246)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_19" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(256, 766)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_19" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1248, 1262)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_20" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(224, 782)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_20" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1216, 1278)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_27_21" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(192, 798)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_21" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1184, 1294)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="Parede_21_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-32, 718)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_22_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(0, 734)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_23_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(32, 750)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_24_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(64, 766)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_25_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(96, 782)
+texture = ExtResource("17_03284")
+offset = Vector2(-32, -86)
+
+[node name="Parede_26_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(128, 798)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_27_22" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(160, 814)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_31_22" parent="Mundo/Paredes/CorredorSul" instance=ExtResource("14_81512")]
+position = Vector2(288, 878)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_32_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(320, 894)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_33_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(352, 910)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_34_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(384, 926)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_35_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(416, 942)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_36_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(448, 958)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_37_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(480, 974)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_38_22" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(512, 990)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_22" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1152, 1310)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_23" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-64, 734)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_23" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1120, 1326)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_24" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-96, 750)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_24" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1088, 1342)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_25" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-128, 766)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_25" parent="Mundo/Paredes/CorredorArena" instance=ExtResource("14_81512")]
+position = Vector2(1056, 1358)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_26" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-160, 782)
+texture = ExtResource("16_38151")
+offset = Vector2(-32, -58)
+
+[node name="Parede_50_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(768, 1246)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_51_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(800, 1262)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_52_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(832, 1278)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_53_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(864, 1294)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_54_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(896, 1310)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_55_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(928, 1326)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_56_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(960, 1342)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_57_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(992, 1358)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_58_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1024, 1374)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_61_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1120, 1422)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_62_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1152, 1438)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_63_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1184, 1454)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_64_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1216, 1470)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_65_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1248, 1486)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_66_26" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1280, 1502)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_27" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-192, 798)
+texture = ExtResource("23_50887")
+offset = Vector2(-32, -58)
+
+[node name="Parede_50_27" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(736, 1262)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_28" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-224, 814)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_39_28" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(352, 1102)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_40_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(384, 1118)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_41_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(416, 1134)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_42_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(448, 1150)
+texture = ExtResource("17_03284")
+offset = Vector2(-32, -86)
+
+[node name="Parede_43_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(480, 1166)
+texture = ExtResource("17_03284")
+offset = Vector2(-32, -86)
+
+[node name="Parede_44_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(512, 1182)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_45_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(544, 1198)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_46_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(576, 1214)
+texture = ExtResource("24_62746")
+offset = Vector2(-32, -114)
+
+[node name="Parede_47_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(608, 1230)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_48_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(640, 1246)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_49_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(672, 1262)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_50_28" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(704, 1278)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_29" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-256, 830)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_30" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-288, 846)
+texture = ExtResource("26_88122")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_31" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-320, 862)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_32" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-352, 878)
+texture = ExtResource("28_81423")
+offset = Vector2(-32, -86)
+
+[node name="Parede_50_32" parent="Mundo/Paredes/CorredorLeste" instance=ExtResource("14_81512")]
+position = Vector2(576, 1342)
+texture = ExtResource("23_50887")
+offset = Vector2(-32, -58)
+
+[node name="Parede_21_33" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-384, 894)
+texture = ExtResource("22_15076")
+offset = Vector2(-32, -86)
+
+[node name="Parede_50_33" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(544, 1358)
+texture = ExtResource("15_11031")
+offset = Vector2(-32, -58)
+
+[node name="Parede_21_34" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-416, 910)
+texture = ExtResource("20_53482")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_35" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-448, 926)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_36" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-480, 942)
+texture = ExtResource("27_10457")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_37" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-512, 958)
+texture = ExtResource("19_48570")
+offset = Vector2(-32, -114)
+
+[node name="Parede_21_38" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-544, 974)
+texture = ExtResource("18_25604")
+offset = Vector2(-32, -86)
+
+[node name="ParedeBaixa_15_4" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(352, 334)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_37_4" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(1056, 686)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_68_4" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(2048, 1182)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_68_5" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(2016, 1198)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_48_6" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1344, 894)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_68_6" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1984, 1214)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_48_7" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1312, 910)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_48_9" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1248, 942)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_15_10" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(160, 430)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_68_10" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1856, 1278)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_15_11" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(128, 446)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_37_11" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(832, 798)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_41_12" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(928, 878)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_43_12" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(992, 910)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_44_12" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1024, 926)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_46_12" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1088, 958)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_47_12" parent="Mundo/Paredes/AlcovaRecompensa" instance=ExtResource("14_81512")]
+position = Vector2(1120, 974)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_5_14" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-288, 334)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_7_14" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-224, 366)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_8_14" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-192, 382)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_10_14" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-128, 414)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_12_14" parent="Mundo/Paredes/PatioInicial" instance=ExtResource("14_81512")]
+position = Vector2(-64, 446)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_25_15" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(320, 670)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_26_15" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(352, 686)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_32_15" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(544, 782)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_33_15" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(576, 798)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_34_15" parent="Mundo/Paredes/PatioQuebrado" instance=ExtResource("14_81512")]
+position = Vector2(608, 814)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_68_16" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1664, 1374)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_68_17" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1632, 1390)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_54_18" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1152, 1182)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_56_18" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1216, 1214)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_62_18" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1408, 1310)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_63_18" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1440, 1326)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_64_18" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1472, 1342)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_66_18" parent="Mundo/Paredes/ArenaChefe" instance=ExtResource("14_81512")]
+position = Vector2(1536, 1374)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_39_24" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(480, 1038)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_67_27" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1280, 1534)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_67_28" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1248, 1550)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_67_31" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1152, 1598)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_39_33" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(192, 1182)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_51_34" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(544, 1390)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_52_34" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(576, 1406)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_58_34" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(768, 1502)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_59_34" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(800, 1518)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_61_34" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(864, 1550)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_66_34" parent="Mundo/Paredes/PracaPortao" instance=ExtResource("14_81512")]
+position = Vector2(1024, 1630)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_39_36" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(96, 1230)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_39_37" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(64, 1246)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_39_38" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(32, 1262)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_24_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-480, 1038)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_25_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-448, 1054)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_26_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-416, 1070)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_27_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-384, 1086)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_28_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-352, 1102)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_29_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-320, 1118)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_30_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-288, 1134)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_32_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-224, 1166)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_34_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-160, 1198)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_35_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-128, 1214)
+texture = ExtResource("30_07147")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="ParedeBaixa_38_39" parent="Mundo/Paredes/SalaoGuardioes" instance=ExtResource("14_81512")]
+position = Vector2(-32, 1262)
+texture = ExtResource("29_77115")
+offset = Vector2(-32, -44)
+fades_when_hiding_player = false
+
+[node name="Braseiro_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("31_75674")]
+position = Vector2(0, 176)
+
+[node name="Braseiro_2" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("31_75674")]
+position = Vector2(288, 288)
+
+[node name="Velas_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("32_86384")]
+position = Vector2(160, 224)
+
+[node name="EstatuaLanterna_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("33_07460")]
+position = Vector2(192, 304)
+
+[node name="PilarQuebrado_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("34_16440")]
+position = Vector2(-128, 336)
+
+[node name="PilarCoto_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("35_14540")]
+position = Vector2(-192, 272)
+
+[node name="Placa_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("36_71221")]
+position = Vector2(128, 368)
+
+[node name="ArbustoA_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("37_06344")]
+position = Vector2(-160, 224)
+
+[node name="Hera_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("38_47171")]
+position = Vector2(-96, 384)
+
+[node name="ArbustoB_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("39_90093")]
+position = Vector2(32, 416)
+
+[node name="ArbustoA_2" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("37_06344")]
+position = Vector2(60.8, 177.6)
+
+[node name="EntulhoB_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("40_04251")]
+position = Vector2(0, 352)
+
+[node name="EntulhoA_1" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("41_64926")]
+position = Vector2(-70.4, 182.4)
+
+[node name="Braseiro_3" parent="Mundo/Decoracao/CorredorInicial" instance=ExtResource("31_75674")]
+position = Vector2(320, 400)
+
+[node name="Braseiro_4" parent="Mundo/Decoracao/CorredorInicial" instance=ExtResource("31_75674")]
+position = Vector2(384, 496)
+
+[node name="EntulhoC_1" parent="Mundo/Decoracao/CorredorInicial" instance=ExtResource("42_59925")]
+position = Vector2(352, 448)
+
+[node name="ArbustoB_2" parent="Mundo/Decoracao/PatioInicial" instance=ExtResource("39_90093")]
+position = Vector2(211.2, 400)
+
+[node name="PilarAlto_1" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("43_51069")]
+position = Vector2(672, 512)
+
+[node name="PilarAlto_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("43_51069")]
+position = Vector2(512, 592)
+
+[node name="PilarAlto_3" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("43_51069")]
+position = Vector2(864, 608)
+
+[node name="PilarAlto_4" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("43_51069")]
+position = Vector2(704, 688)
+
+[node name="PilarQuebrado_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("34_16440")]
+position = Vector2(832, 528)
+
+[node name="PilarQuebrado_3" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("34_16440")]
+position = Vector2(672, 768)
+
+[node name="PilarCoto_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("35_14540")]
+position = Vector2(384, 592)
+
+[node name="EstatuaOracao_1" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("44_82975")]
+position = Vector2(1024, 624)
+
+[node name="PedestalAzul_1" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("45_37906")]
+position = Vector2(672, 448)
+
+[node name="PedestalAzul_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("45_37906")]
+position = Vector2(736, 768)
+
+[node name="EntulhoA_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("41_64926")]
+position = Vector2(704, 624)
+
+[node name="EntulhoC_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("42_59925")]
+position = Vector2(464, 648)
+
+[node name="ArbustoA_3" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("37_06344")]
+position = Vector2(800, 672)
+
+[node name="Hera_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("38_47171")]
+position = Vector2(560, 488)
+
+[node name="Velas_2" parent="Mundo/Decoracao/PatioQuebrado" instance=ExtResource("32_86384")]
+position = Vector2(483.2, 702.4)
+
+[node name="Braseiro_5" parent="Mundo/Decoracao/Passagem" instance=ExtResource("31_75674")]
+position = Vector2(992, 736)
+
+[node name="CristalA_1" parent="Mundo/Decoracao/AlcovaRecompensa" instance=ExtResource("46_85733")]
+position = Vector2(1280, 816)
+
+[node name="CristalB_1" parent="Mundo/Decoracao/AlcovaRecompensa" instance=ExtResource("47_65824")]
+position = Vector2(1120, 896)
+
+[node name="EstatuaLanterna_2" parent="Mundo/Decoracao/AlcovaRecompensa" instance=ExtResource("33_07460")]
+position = Vector2(1248, 768)
+
+[node name="Velas_3" parent="Mundo/Decoracao/AlcovaRecompensa" instance=ExtResource("32_86384")]
+position = Vector2(976, 840)
+
+[node name="PilarCoto_3" parent="Mundo/Decoracao/AlcovaRecompensa" instance=ExtResource("35_14540")]
+position = Vector2(1248, 864)
+
+[node name="ArbustoB_3" parent="Mundo/Decoracao/AlcovaRecompensa" instance=ExtResource("39_90093")]
+position = Vector2(1024, 832)
+
+[node name="Velas_4" parent="Mundo/Decoracao/CorredorSul" instance=ExtResource("32_86384")]
+position = Vector2(320, 752)
+
+[node name="Velas_5" parent="Mundo/Decoracao/CorredorSul" instance=ExtResource("32_86384")]
+position = Vector2(272, 824)
+
+[node name="ArbustoA_4" parent="Mundo/Decoracao/CorredorSul" instance=ExtResource("37_06344")]
+position = Vector2(416, 720)
+
+[node name="PilarAlto_5" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("43_51069")]
+position = Vector2(-32, 864)
+
+[node name="PilarAlto_6" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("43_51069")]
+position = Vector2(224, 992)
+
+[node name="PilarBaixo_1" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("48_68763")]
+position = Vector2(-160, 928)
+
+[node name="PilarQuebrado_4" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("34_16440")]
+position = Vector2(96, 1056)
+
+[node name="PilarAlto_7" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("43_51069")]
+position = Vector2(-288, 992)
+
+[node name="PilarAlto_8" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("43_51069")]
+position = Vector2(-32, 1120)
+
+[node name="EstatuaOracao_2" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("44_82975")]
+position = Vector2(-32, 768)
+
+[node name="EstatuaLanterna_3" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("33_07460")]
+position = Vector2(384, 976)
+
+[node name="PedestalAzul_3" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("45_37906")]
+position = Vector2(-208, 856)
+
+[node name="PedestalAzul_4" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("45_37906")]
+position = Vector2(0, 1200)
+
+[node name="Braseiro_6" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("31_75674")]
+position = Vector2(192, 880)
+
+[node name="Braseiro_7" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("31_75674")]
+position = Vector2(-448, 976)
+
+[node name="Braseiro_8" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("31_75674")]
+position = Vector2(-224, 1088)
+
+[node name="EntulhoB_2" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("40_04251")]
+position = Vector2(32, 928)
+
+[node name="EntulhoC_3" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("42_59925")]
+position = Vector2(-64, 1056)
+
+[node name="EntulhoA_3" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("41_64926")]
+position = Vector2(-288, 928)
+
+[node name="Hera_3" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("38_47171")]
+position = Vector2(256, 1024)
+
+[node name="ArbustoA_5" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("37_06344")]
+position = Vector2(-256, 1024)
+
+[node name="Velas_6" parent="Mundo/Decoracao/SalaoGuardioes" instance=ExtResource("32_86384")]
+position = Vector2(0, 992)
+
+[node name="PedestalAzul_5" parent="Mundo/Decoracao/CorredorLeste" instance=ExtResource("45_37906")]
+position = Vector2(416, 1152)
+
+[node name="PedestalAzul_6" parent="Mundo/Decoracao/CorredorLeste" instance=ExtResource("45_37906")]
+position = Vector2(480, 1248)
+
+[node name="EntulhoC_4" parent="Mundo/Decoracao/CorredorLeste" instance=ExtResource("42_59925")]
+position = Vector2(448, 1200)
+
+[node name="ArbustoB_4" parent="Mundo/Decoracao/CorredorLeste" instance=ExtResource("39_90093")]
+position = Vector2(336, 1112)
+
+[node name="Velas_7" parent="Mundo/Decoracao/CorredorLeste" instance=ExtResource("32_86384")]
+position = Vector2(608, 1264)
+
+[node name="Braseiro_9" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("31_75674")]
+position = Vector2(960, 1360)
+
+[node name="Braseiro_10" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("31_75674")]
+position = Vector2(1120, 1440)
+
+[node name="PedestalAzul_7" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("45_37906")]
+position = Vector2(672, 1376)
+
+[node name="PedestalAzul_8" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("45_37906")]
+position = Vector2(1040, 1560)
+
+[node name="EstatuaOracao_3" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("44_82975")]
+position = Vector2(832, 1328)
+
+[node name="EstatuaLanterna_4" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("33_07460")]
+position = Vector2(1184, 1504)
+
+[node name="ArbustoA_6" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("37_06344")]
+position = Vector2(704, 1312)
+
+[node name="EntulhoB_3" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("40_04251")]
+position = Vector2(816, 1400)
+
+[node name="Hera_4" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("38_47171")]
+position = Vector2(1024, 1520)
+
+[node name="Placa_2" parent="Mundo/Decoracao/PracaPortao" instance=ExtResource("36_71221")]
+position = Vector2(896, 1392)
+
+[node name="Velas_8" parent="Mundo/Decoracao/CorredorArena" instance=ExtResource("32_86384")]
+position = Vector2(1120, 1328)
+
+[node name="Velas_9" parent="Mundo/Decoracao/CorredorArena" instance=ExtResource("32_86384")]
+position = Vector2(1264, 1304)
+
+[node name="ArbustoB_5" parent="Mundo/Decoracao/CorredorArena" instance=ExtResource("39_90093")]
+position = Vector2(1286.4, 1251.2)
+
+[node name="EstatuaOracao_4" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("44_82975")]
+position = Vector2(1664, 976)
+
+[node name="EstatuaOracao_5" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("44_82975")]
+position = Vector2(1984, 1136)
+
+[node name="Velas_10" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("32_86384")]
+position = Vector2(1827.2, 1054.4)
+
+[node name="Velas_11" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("32_86384")]
+position = Vector2(1715.2, 998.4)
+
+[node name="Velas_12" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("32_86384")]
+position = Vector2(1913.6, 1180.8)
+
+[node name="Braseiro_11" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("31_75674")]
+position = Vector2(1536, 944)
+
+[node name="Braseiro_12" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("31_75674")]
+position = Vector2(1248, 1088)
+
+[node name="Braseiro_13" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("31_75674")]
+position = Vector2(1664, 1296)
+
+[node name="PedestalAzul_9" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("45_37906")]
+position = Vector2(1216, 1136)
+
+[node name="PedestalAzul_10" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("45_37906")]
+position = Vector2(1568, 1312)
+
+[node name="PedestalAzul_11" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("45_37906")]
+position = Vector2(1568, 1008)
+
+[node name="PilarQuebrado_5" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("34_16440")]
+position = Vector2(1776, 1224)
+
+[node name="PilarCoto_4" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("35_14540")]
+position = Vector2(1408, 1008)
+
+[node name="EntulhoA_4" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("41_64926")]
+position = Vector2(1536, 1264)
+
+[node name="EntulhoC_5" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("42_59925")]
+position = Vector2(1344, 1088)
+
+[node name="ArbustoA_7" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("37_06344")]
+position = Vector2(1296, 1032)
+
+[node name="Hera_5" parent="Mundo/Decoracao/ArenaChefe" instance=ExtResource("38_47171")]
+position = Vector2(1744, 1272)
+
+[node name="Portao_Parte1" parent="Mundo/Portao" instance=ExtResource("49_77417")]
+position = Vector2(1008, 1378)
+
+[node name="Portao_Parte2" parent="Mundo/Portao" instance=ExtResource("50_13676")]
+position = Vector2(1040, 1394)
+
+[node name="Portao_Parte3" parent="Mundo/Portao" instance=ExtResource("51_53794")]
+position = Vector2(1072, 1410)
+
+[node name="Portao_Parte4" parent="Mundo/Portao" instance=ExtResource("52_61415")]
+position = Vector2(1104, 1426)
+
+[node name="Portao_Veu" parent="Mundo/Portao" instance=ExtResource("53_62108")]
+position = Vector2(1056, 1402)
+
+[node name="PortalRoxo" parent="Mundo/Portao" instance=ExtResource("54_09604")]
+position = Vector2(1920, 1098)
+
+[node name="EssenciaEsquecida_1" parent="Mundo/Itens" instance=ExtResource("55_44135")]
+position = Vector2(1152, 848)
+kind = "souls"
+amount = 200
+
+[node name="EssenciaEsquecida_2" parent="Mundo/Itens" instance=ExtResource("55_44135")]
+position = Vector2(630.4, 468.8)
+kind = "souls"
+amount = 100
+
+[node name="FragmentoDeFrasco_1" parent="Mundo/Itens" instance=ExtResource("55_44135")]
+position = Vector2(-390.4, 956.8)
+kind = "flask"
+
+[node name="FragmentoDeFrasco_2" parent="Mundo/Itens" instance=ExtResource("55_44135")]
+position = Vector2(745.6, 1348.8)
+kind = "flask"
+
+[node name="Marcadores" type="Node2D" parent="."]
+
+[node name="Patrulhas" type="Node2D" parent="Marcadores"]
+
+[node name="Bussola" type="Node2D" parent="Marcadores"]
+unique_name_in_owner = true
+
+[node name="Ponto01" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(-96, 256)
+
+[node name="Ponto02" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(320, 432)
+
+[node name="Ponto03" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(688, 616)
+
+[node name="Ponto04" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(304, 792)
+
+[node name="Ponto05" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(-32, 976)
+
+[node name="Ponto06" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(448, 1184)
+
+[node name="Ponto07" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(896, 1408)
+
+[node name="Ponto08" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(1200, 1304)
+
+[node name="Ponto09" type="Marker2D" parent="Marcadores/Bussola"]
+position = Vector2(1536, 1152)
+
+[node name="PontoInicial" type="Marker2D" parent="Marcadores"]
+position = Vector2(-96, 256)
+
+[node name="EntradaArena" type="Marker2D" parent="Marcadores"]
+position = Vector2(1225.6, 1300.8)
+unique_name_in_owner = true
+
+[node name="Soldado_1_A" type="Marker2D" parent="Marcadores/Patrulhas"]
+position = Vector2(672, 544)
+
+[node name="Soldado_1_B" type="Marker2D" parent="Marcadores/Patrulhas"]
+position = Vector2(544, 608)
+
+[node name="Soldado_1" parent="Mundo/Inimigos" instance=ExtResource("56_77426")]
+position = Vector2(608, 576)
+patrol_points = Array[NodePath]([NodePath("../../../Marcadores/Patrulhas/Soldado_1_A"), NodePath("../../../Marcadores/Patrulhas/Soldado_1_B")])
+
+[node name="Soldado_2_A" type="Marker2D" parent="Marcadores/Patrulhas"]
+position = Vector2(864, 576)
+
+[node name="Soldado_2_B" type="Marker2D" parent="Marcadores/Patrulhas"]
+position = Vector2(960, 624)
+
+[node name="Soldado_2" parent="Mundo/Inimigos" instance=ExtResource("56_77426")]
+position = Vector2(928, 608)
+patrol_points = Array[NodePath]([NodePath("../../../Marcadores/Patrulhas/Soldado_2_A"), NodePath("../../../Marcadores/Patrulhas/Soldado_2_B")])
+
+[node name="Soldado_3" parent="Mundo/Inimigos" instance=ExtResource("56_77426")]
+position = Vector2(720, 744)
+
+[node name="Soldado_4" parent="Mundo/Inimigos" instance=ExtResource("56_77426")]
+position = Vector2(1152, 816)
+
+[node name="Guardiao_1" parent="Mundo/Inimigos" instance=ExtResource("57_98294")]
+position = Vector2(-192, 1008)
+
+[node name="Soldado_5_A" type="Marker2D" parent="Marcadores/Patrulhas"]
+position = Vector2(-64, 816)
+
+[node name="Soldado_5_B" type="Marker2D" parent="Marcadores/Patrulhas"]
+position = Vector2(-192, 880)
+
+[node name="Soldado_5" parent="Mundo/Inimigos" instance=ExtResource("56_77426")]
+position = Vector2(-112, 856)
+patrol_points = Array[NodePath]([NodePath("../../../Marcadores/Patrulhas/Soldado_5_A"), NodePath("../../../Marcadores/Patrulhas/Soldado_5_B")])
+
+[node name="Soldado_6" parent="Mundo/Inimigos" instance=ExtResource("56_77426")]
+position = Vector2(208, 952)
+
+[node name="Espectro_1" parent="Mundo/Inimigos" instance=ExtResource("58_77641")]
+position = Vector2(96, 1120)
+
+[node name="Espectro_2" parent="Mundo/Inimigos" instance=ExtResource("58_77641")]
+position = Vector2(992, 1504)
+
+[node name="Chefe" parent="Mundo" instance=ExtResource("59_49414")]
+position = Vector2(1648, 1096)
+unique_name_in_owner = true
+
+[node name="Jogador" parent="Mundo" instance=ExtResource("60_76907")]
+position = Vector2(-96, 256)
+unique_name_in_owner = true
+
+[node name="Arena" type="Node2D" parent="."]
+
+[node name="GatilhoArena" type="Area2D" parent="Arena"]
+collision_layer = 0
+collision_mask = 2
+unique_name_in_owner = true
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arena/GatilhoArena"]
+polygon = PackedVector2Array(1302.4, 1188.8, 1462.4, 1268.8, 1436.8, 1281.6, 1276.8, 1201.6)
+
+[node name="BarreiraNevoa" type="StaticBody2D" parent="Arena"]
+collision_mask = 0
+
+[node name="BarreiraColisao" type="CollisionPolygon2D" parent="Arena/BarreiraNevoa"]
+polygon = PackedVector2Array(1312, 1232, 1376, 1264, 1344, 1280, 1280, 1248)
+disabled = true
+unique_name_in_owner = true
+
+[node name="BarreiraVisual" parent="Arena" instance=ExtResource("53_62108")]
+visible = false
+position = Vector2(1312, 1274)
+unique_name_in_owner = true
+
+[node name="Hud" parent="." instance=ExtResource("61_02931")]
+unique_name_in_owner = true
+
+[node name="MenuPausa" parent="." instance=ExtResource("62_13872")]
+unique_name_in_owner = true
+
+[node name="TelaFinal" parent="." instance=ExtResource("63_41944")]
+unique_name_in_owner = true
+

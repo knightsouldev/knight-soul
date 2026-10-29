@@ -1,0 +1,204 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_73578"]
+[ext_resource type="Theme" path="res://resources/themes/tema_medieval.tres" id="2_15842"]
+[ext_resource type="FontFile" path="res://assets/fonts/Gloock-Regular.ttf" id="3_07579"]
+[ext_resource type="Texture2D" path="res://assets/environments/far_ruins.png" id="4_50564"]
+[ext_resource type="Texture2D" path="res://assets/environments/fog.png" id="5_63112"]
+[ext_resource type="SpriteFrames" path="res://resources/frames/player.tres" id="6_07905"]
+[ext_resource type="Texture2D" path="res://assets/ui/vignette.png" id="7_58659"]
+[ext_resource type="Texture2D" path="res://assets/ui/divider.png" id="8_14947"]
+[ext_resource type="Texture2D" path="res://assets/ui/panel.png" id="9_35766"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_15842")
+script = ExtResource("1_73578")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.03, 0.04, 0.08, 1)
+
+[node name="RuinasAoFundo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+modulate = Color(0.6, 0.68, 0.95, 0.8)
+texture = ExtResource("4_50564")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Neblina" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+modulate = Color(0.6, 0.7, 1, 0.35)
+texture = ExtResource("5_63112")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Cavaleiro" type="Node2D" parent="."]
+position = Vector2(560, 380)
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Cavaleiro"]
+sprite_frames = ExtResource("6_07905")
+animation = &"idle_front"
+autoplay = "idle_front"
+offset = Vector2(0, -24)
+
+[node name="Vinheta" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_58659")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0
+anchor_top = 0.5
+anchor_right = 0
+anchor_bottom = 0.5
+offset_left = 60
+offset_top = -150
+offset_right = 580
+offset_bottom = -90
+mouse_filter = 2
+text = "KNIGHT SOULS"
+horizontal_alignment = 0
+theme_override_fonts/font = ExtResource("3_07579")
+theme_override_colors/font_color = Color(0.92, 0.8, 0.5, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 44
+
+[node name="Subtitulo" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0
+anchor_top = 0.5
+anchor_right = 0
+anchor_bottom = 0.5
+offset_left = 64
+offset_top = -92
+offset_right = 584
+offset_bottom = -72
+mouse_filter = 2
+text = "Primeira demo jogável  ·  Ruínas Esquecidas"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.62, 0.5, 0.3, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 14
+
+[node name="Divisor" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0
+anchor_top = 0.5
+anchor_right = 0
+anchor_bottom = 0.5
+offset_left = 60
+offset_top = -62
+offset_right = 320
+offset_bottom = -51
+mouse_filter = 2
+texture = ExtResource("8_14947")
+expand_mode = 1
+stretch_mode = 0
+
+[node name="Menu" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0
+anchor_top = 0.5
+anchor_right = 0
+anchor_bottom = 0.5
+offset_left = 64
+offset_top = -40
+offset_right = 234
+offset_bottom = 90
+theme_override_constants/separation = 8
+
+[node name="BotaoIniciar" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(170, 22)
+layout_mode = 2
+text = "Iniciar jornada"
+unique_name_in_owner = true
+
+[node name="BotaoControles" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(170, 22)
+layout_mode = 2
+text = "Controles"
+
+[node name="BotaoSair" type="Button" parent="Menu"]
+custom_minimum_size = Vector2(170, 22)
+layout_mode = 2
+text = "Sair"
+
+[node name="PainelControles" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0
+anchor_top = 0.5
+anchor_right = 0
+anchor_bottom = 0.5
+offset_left = 260
+offset_top = -40
+offset_right = 520
+offset_bottom = 88
+mouse_filter = 2
+texture = ExtResource("9_35766")
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+unique_name_in_owner = true
+
+[node name="Texto" type="Label" parent="PainelControles"]
+layout_mode = 0
+offset_left = 14
+offset_top = 12
+offset_right = 254
+offset_bottom = 116
+mouse_filter = 2
+text = "WASD  mover
+Mouse / clique esq.  atacar na direção do cursor
+Espaço  esquivar (invulnerável no início)
+Q  curar   E  usar item   1-4 / roda  escolher
+Esc  pausar"
+horizontal_alignment = 0
+theme_override_colors/font_color = Color(0.85, 0.78, 0.62, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 12
+
+[connection signal="pressed" from="Menu/BotaoIniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Menu/BotaoControles" to="." method="_on_controles_pressed"]
+[connection signal="pressed" from="Menu/BotaoSair" to="." method="_on_sair_pressed"]

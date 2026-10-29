@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/pickup.gd" id="1_90589"]
+[ext_resource type="Texture2D" path="res://assets/effects/shadow.png" id="2_07328"]
+[ext_resource type="SpriteFrames" path="res://resources/frames/prop_soul_orb.tres" id="3_87569"]
+[ext_resource type="Texture2D" path="res://assets/ui/icon_flask.png" id="4_81340"]
+[ext_resource type="Texture2D" path="res://assets/effects/light.png" id="5_23721"]
+
+[node name="ItemColetavel" type="Node2D"]
+script = ExtResource("1_90589")
+
+[node name="Sombra" type="Sprite2D" parent="."]
+z_index = -4
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_07328")
+
+[node name="Orbe" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -18)
+scale = Vector2(1.2, 1.2)
+sprite_frames = ExtResource("3_87569")
+autoplay = "default"
+
+[node name="IconeFrasco" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -18)
+texture = ExtResource("4_81340")
+
+[node name="Luz" type="PointLight2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(1, 0.6)
+color = Color(0.4, 0.7, 1, 1)
+energy = 0.8
+texture = ExtResource("5_23721")
+texture_scale = 0.7
+

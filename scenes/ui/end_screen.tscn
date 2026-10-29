@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/Gloock-Regular.ttf" id="1_07579"]
+[ext_resource type="Script" path="res://scripts/ui/end_screen.gd" id="2_89317"]
+[ext_resource type="Theme" path="res://resources/themes/tema_medieval.tres" id="3_15842"]
+
+[node name="TelaFinal" type="CanvasLayer"]
+process_mode = 3
+layer = 30
+script = ExtResource("2_89317")
+
+[node name="Raiz" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_15842")
+
+[node name="Escurecer" type="ColorRect" parent="Raiz"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+unique_name_in_owner = true
+
+[node name="Titulo" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320
+offset_top = -70
+offset_right = 320
+offset_bottom = -20
+mouse_filter = 2
+text = "VOCÊ SUCUMBIU"
+horizontal_alignment = 1
+theme_override_fonts/font = ExtResource("1_07579")
+theme_override_colors/font_color = Color(0.72, 0.14, 0.14, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 6
+theme_override_font_sizes/font_size = 38
+unique_name_in_owner = true
+
+[node name="Subtitulo" type="Label" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320
+offset_top = -14
+offset_right = 320
+offset_bottom = 26
+mouse_filter = 2
+text = ""
+horizontal_alignment = 1
+theme_override_colors/font_color = Color(0.85, 0.78, 0.62, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.9)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 14
+unique_name_in_owner = true
+
+[node name="Botoes" type="VBoxContainer" parent="Raiz"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75
+offset_top = 40
+offset_right = 75
+offset_bottom = 140
+theme_override_constants/separation = 6
+unique_name_in_owner = true
+
+[node name="BotaoTentar" type="Button" parent="Raiz/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Tentar novamente"
+unique_name_in_owner = true
+
+[node name="BotaoContinuar" type="Button" parent="Raiz/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Continuar explorando"
+unique_name_in_owner = true
+
+[node name="BotaoMenu" type="Button" parent="Raiz/Botoes"]
+custom_minimum_size = Vector2(150, 22)
+layout_mode = 2
+text = "Menu principal"
+
+[connection signal="pressed" from="Raiz/Botoes/BotaoTentar" to="." method="_on_tentar_pressed"]
+[connection signal="pressed" from="Raiz/Botoes/BotaoContinuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Raiz/Botoes/BotaoMenu" to="." method="_on_menu_pressed"]
