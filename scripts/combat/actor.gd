@@ -28,6 +28,7 @@ var shadow: Sprite2D
 var body_shape: CollisionShape2D
 var facing := Vector2(1, 1).normalized()   # direção em espaço de chão
 var view_back := false                      # true = mostrando as costas
+var view_dir := 0                           # 0 frente, 1 diag. frente, 2 lado, 3 diag. costas, 4 costas (só para "walk")
 var ground_vel := Vector2.ZERO              # velocidade desejada (espaço de chão)
 var knock_vel := Vector2.ZERO               # empurrão de golpes recebidos
 var dead := false
@@ -65,13 +66,30 @@ func set_facing(dir_ground: Vector2) -> void:
 	if dir_ground.length() < 0.01:
 		return
 	facing = dir_ground.normalized()
+	_update_view_dir()
 	if absf(facing.y) > 0.28:
 		view_back = facing.y < 0.0
 	if absf(facing.x) > 0.12:
 		sprite.flip_h = facing.x < 0.0
 
-## Nome real da animação: "walk" vira "walk_front" ou "walk_back".
+## Escolhe um dos 5 ângulos de caminhada (o lado esquerdo é o direito espelhado).
+func _update_view_dir() -> void:
+	var ang := rad_to_deg(atan2(absf(facing.x), absf(facing.y)))   # 0 = vertical, 90 = horizontal
+	if ang < 25.0:
+		view_dir = 4 if facing.y < 0.0 else 0
+	elif ang < 65.0:
+		view_dir = 3 if facing.y < 0.0 else 1
+	else:
+		view_dir = 2
+
+const _WALK_DIRS := ["front", "diag_front", "side", "diag_back", "back"]
+
+## Nome real da animação: "walk" vira walk_front / walk_diag_front / walk_side /
+## walk_diag_back / walk_back (se o personagem tiver esses 5 ângulos); as demais
+## animações usam só "_front" ou "_back".
 func anim_name(base: String) -> String:
+	if base == "walk" and sprite.sprite_frames.has_animation(&"walk_side"):
+		return "walk_" + _WALK_DIRS[view_dir]
 	return base + ("_back" if view_back else "_front")
 
 func play_loop(base: String, speed: float = 1.0) -> void:

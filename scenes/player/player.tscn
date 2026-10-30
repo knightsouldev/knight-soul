@@ -36,7 +36,7 @@ material = SubResource("ShaderMaterial_5")
 sprite_frames = ExtResource("6_07905")
 animation = &"idle_front"
 autoplay = "idle_front"
-offset = Vector2(0, -24)
+offset = Vector2(0, -26)
 
 [node name="Vida" type="Node" parent="."]
 script = ExtResource("7_58037")
